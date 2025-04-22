@@ -1,162 +1,406 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meu formulario</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,
-     100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-
+    <title>ANPV Clube De Benefícios</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div class="page">
+    <!DOCTYPE html>
+    <html lang="pt-br">
 
-        <header>
-            <h1>Crie e compartilhe seu evento</h1>
-            <p>O primeiro passo, é preencher esse formulario de inscrição</p>
-        </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ANPV Clube De Benefícios</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,
+     100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
 
-        <form id="my-form">
 
-            <fieldset>
-                <div class="fieldset-wrapper">
-                    <legend>Privacidade</legend>
+    </head>
+
+    <body>
+
+
+
+        <div class="page">
+
+            <header id="bg-video">
+
+                <video autoplay muted loop playsinline>
+                    <source src="video/myVideo.mp4.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </header>
+
+
+            <form id="my-form">
+
+
+
+                <fieldset>
+                    <div class="fieldset-wrapper">
+                        <legend>Informações Do Associado</legend>
+
+                        <div class="input-wrapper">
+                            <label for="event-name">Informe seu nome completo <span>(Digite seu nome aqui
+                                    )</span></label>
+                            <input type="text" id="evento-name" />
+
+                        </div>
+
+                        <div class="input-wrapper"> <!--incobrindo algo encapsulando numa caixa-->
+                            <label for="event-cep">Informe seu CEP<span> (somente numeros)</span></label>
+                            <input type="number" id="event-cep" />
+                        </div>
+
+                        <!-- <div class="checkbox-wrapper">
+                            <input type="checkbox" id="event-private" />
+                            <label for="event-private">Evento privado</label>
+
+                        </div>-->
+
+                        <div class="input-wrapper">
+                            <label for="event-cpf">Informe seu CPF<span>(minimo 8
+                                    caracteres)</span></label>
+                            <input type="text" id="event-cpf" required minlength="8" />
+
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="event-cpf">CNH Do Condutor<span>(minimo 8
+                                    caracteres)</span></label>
+                            <input type="text" id="event-cnh" required minlength="8" />
+
+                        </div>
+
+
+                        <div class="checkbox-wrapper">
+                            <label>Envolve terceiros?</label>
+                            <div class="radio-group">
+                                <input type="radio" id="third-party-yes" name="third_party" value="sim"
+                                    style="display: none;"
+                                    onchange="document.getElementById('third-party-fields').style.display = this.checked ? 'block' : 'none'">
+                                <label for="third-party-yes" style="cursor: pointer;">Sim</label>
+
+                                <input type="radio" id="third-party-no" name="third_party" value="nao"
+                                    style="display: none;"
+                                    onchange="document.getElementById('third-party-fields').style.display = 'none'">
+                                <label for="third-party-no" style="cursor: pointer;">Não</label>
+                            </div>
+                        </div>
+
+                        <!-- Campos condicionais (inicialmente ocultos) -->
+                        <div id="third-party-fields" style="display: none;">
+                            <div class="input-wrapper">
+                                <label for="vehicle-plate">Placa do veículo</label>
+                                <input type="text" id="vehicle-plate">
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="vehicle-model">Modelo do veículo</label>
+                                <input type="text" id="vehicle-model">
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="vehicle-year">Ano do veículo</label>
+                                <input type="number" id="vehicle-year" min="1900" max="2024">
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </fieldset>
+
+                <fieldset> <!--agrupamento de campo-->
+                    <div class="fieldset-wrapper">
+                        <legend>Informações do evento</legend>
+
+                        <div class="input-wrapper">
+                            <label for="event-title">Título do evento<span> (mínimo 8 caracteres)</span></label>
+                            <input type="text" id="event-title" list="event-categories" />
+                            <datalist id="event-categories">
+                                <option value="Assistência 24Horas">
+                                <option value="Roubo">
+                                <option value="Furto">
+                                <option value="Colisão">
+                            </datalist>
+                        </div>
+
+
+                        <div class="input-wrapper"> <!--incobrindo algo encapsulando numa caixa-->
+                            <label for="event-whatsapp">Contato para Whatsapp<span> (somente numeros)</span></label>
+                            <input type="number" id="event-whatsapp" />
+                        </div>
+
+
+                        <div class="input-wrapper"> <!--incobrindo algo encapsulando numa caixa-->
+                            <label for="event-info">Descreva o ocorrido</label>
+                            <textarea id="event-info"></textarea>
+                        </div>
+
+                    </div>
+                    <br>
 
                     <div class="input-wrapper">
-                        <label for="event-email">Email do administrador <span>(Digite um email valido)</span></label>
-                        <input type="text" id="evento-email" />
-
-                    </div>
-
-                    <div class="checkbox-wrapper">
-                        <input type="checkbox" id="event-private" />
-                        <label for="event-private">Evento privado</label>
-
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="event-password">Senha de acesso para os participantes<span>(minimo 8
-                                caracteres)</span></label>
-                        <input type="text"
-                         id="event-password" 
-                         required
-                         minlength="8"/>
-
-                    </div>
-
-
-
-                </div>
-            </fieldset>
-
-            <fieldset> <!--agrupamento de campo-->
-                <div class="fieldset-wrapper">
-                    <legend>Informação do evento</legend>
-
-                    <div class="input-wrapper"> <!--incobrindo algo encapsulando numa caixa-->
-                        <label for="event-title">Titulo do evento<span> (minimo 8 caracteres)</span></label>
-                        <input type="text" id="event-title" />
-                    </div>
-
-                    <div class="input-wrapper"> <!--incobrindo algo encapsulando numa caixa-->
-                        <label for="event-link">Link do evento<span> (comece com https://)</span></label>
-                        <input type="text"
-                         id="event-link"
-                         required />
-                    </div>
-
-                    <div class="input-wrapper"> <!--incobrindo algo encapsulando numa caixa-->
-                        <label for="event-whatsapp">Contato para Whatsapp<span> (somente numeros)</span></label>
-                        <input type="number" id="event-whatsapp" />
-                    </div>
-
-
-                    <div class="input-wrapper"> <!--incobrindo algo encapsulando numa caixa-->
-                        <label for="event-info">Iformações extras</label>
-                        <textarea id="event-info"></textarea>
-                    </div>
-
-                </div>
-                <br>
-
-                <div class="checkbox-wrapper">
-                    <label for="event-category">Categoria</label>
-                    <br>
-                    <br>
-                    <input type="checkbox" id="event-category" />
-                    <label for="event-category">Ao vivo</label>
-                    <br>
-                    <input type="checkbox" id="event-category" />
-                    <label for="event-category">Podcast</label>
-                    <br>
-                    <input type="checkbox" id="event-category" />
-                    <label for="event-category">Mentoria</label>
-
-
-                </div>
-
-
-            </fieldset>
-
-
-
-
-
-            <fieldset>
-                <div class="fieldset-wrapper">
-                    <legend>Dia e hora</legend>
-
-                    <div class="col-3">
-
+                        <label for="event-document">Anexar CNH <span>(Formatos aceitos: .pdf, .doc,
+                                .docx)</span></label>
+                        <input type="file" id="event-document" accept=".pdf,.doc,.docx" multiple>
+                        <br>
+                        <br>
                         <div class="input-wrapper">
-                            <label for="event-date">Data</label>
-                            <input type="date" id="evento-date" />
+                            <label for="event-document">Anexar CRLV <span>(Formatos aceitos: .pdf, .doc,
+                                    .docx)</span></label>
+                            <input type="file" id="event-document" accept=".pdf,.doc,.docx" multiple>
+                            <br>
+                            <br>
+                            <div class="input-wrapper">
+                                <label for="event-document">Anexar Comprovante de Residência <span>(Formatos aceitos:
+                                        .pdf, .doc,
+                                        .docx)</span></label>
+                                <input type="file" id="event-document" accept=".pdf,.doc,.docx" multiple>
 
+                                <br>
+                                <br>
+
+                                <div class="checkbox-wrapper">
+                                    <label>O veiculo esta se Locomovendo ?</label>
+                                    <div class="radio-group">
+                                        <input type="radio" id="third-party-yes" name="third_party" value="sim"
+                                            style="display: none;"
+                                            onchange="document.getElementById('third-party-fields').style.display = this.checked ? 'block' : 'none'">
+                                        <label for="third-party-yes" style="cursor: pointer;">Sim</label>
+
+                                        <input type="radio" id="third-party-no" name="third_party" value="nao"
+                                            style="display: none;"
+                                            onchange="document.getElementById('third-party-fields').style.display = 'none'">
+                                        <label for="third-party-no" style="cursor: pointer;">Não</label>
+                                    </div>
+                                </div>
+
+
+
+                </fieldset>
+
+
+
+
+
+                <fieldset>
+                    <div class="fieldset-wrapper">
+                        <legend>Dia e hora</legend>
+
+                        <div class="col-3">
+
+                            <div class="input-wrapper">
+                                <label for="event-date">Data</label>
+                                <input type="date" id="evento-date" />
+
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="event-begin">Das</label>
+                                <input type="time" id="event-begin" />
+
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="event-and">Até</label>
+                                <input type="time" id="event-and" />
+
+                            </div>
                         </div>
 
-                        <div class="input-wrapper">
-                            <label for="event-begin">Das</label>
-                            <input type="time" id="event-begin" />
 
-                        </div>
 
-                        <div class="input-wrapper">
-                            <label for="event-and">Até</label>
-                            <input type="time" id="event-and" />
 
-                        </div>
+
                     </div>
+                </fieldset>
 
 
 
+            </form>
+
+            <footer>
+                <input class="button" type="submit" value="SALVAR EVENTO" form="my-form" id="submit-button">
 
 
-                </div>
-            </fieldset>
+
+            </footer>
+    </body>
 
 
-
-        </form>
-
-        <footer>
-            <input class="button"
-             type="submit"
-             value="SALVAR EVENTO"
-             form="my-form"
-             minlength="8">
-             
-    </div>
-    </footer>
+    </html>
+    <!-- Corrigir o HTML (remover tags duplicadas e ajustar IDs) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('my-form');
+            const submitButton = document.getElementById('submit-button');
+        
+            // Exibição condicional dos campos de terceiros
+            const thirdPartyYes = document.getElementById('third-party-yes');
+            const thirdPartyNo = document.getElementById('third-party-no');
+            const thirdPartyFields = document.getElementById('third-party-fields');
+        
+            function toggleThirdPartyFields() {
+                if (thirdPartyYes.checked) {
+                    thirdPartyFields.style.display = 'block';
+                } else {
+                    thirdPartyFields.style.display = 'none';
+                }
+            }
+        
+            thirdPartyYes.addEventListener('change', toggleThirdPartyFields);
+            thirdPartyNo.addEventListener('change', toggleThirdPartyFields);
+        
+            submitButton.addEventListener('click', function (event) {
+                event.preventDefault();
+        
+                // Captura dos elementos
+                const name = document.getElementById('evento-name');
+                const cep = document.getElementById('event-cep');
+                const cpf = document.getElementById('event-cpf');
+                const cnh = document.getElementById('event-cnh');
+                const title = document.getElementById('event-title');
+                const whatsapp = document.getElementById('event-whatsapp');
+                const info = document.getElementById('event-info');
+                const date = document.getElementById('evento-date');
+                const begin = document.getElementById('event-begin');
+                const end = document.getElementById('event-and');
+                const arquivos = document.querySelectorAll('input[type="file"]');
+        
+                // Funções de validação
+                function validateCEP(value) {
+                    return /^\d{8}$/.test(value);
+                }
+        
+                function validateCPF(value) {
+                    return /^\d{11}$/.test(value);
+                }
+        
+                function validateCNH(value) {
+                    return value.length >= 8;
+                }
+        
+                function validateWhatsApp(value) {
+                    return /^\d{10,11}$/.test(value);
+                }
+        
+                // Resetar estilos de erro
+                document.querySelectorAll('.error').forEach(el => el.remove());
+                document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('invalid'));
+        
+                // Validações
+                let isValid = true;
+        
+                function showError(element, message) {
+                    element.classList.add('invalid');
+                    const error = document.createElement('div');
+                    error.className = 'error';
+                    error.style.color = 'red';
+                    error.textContent = message;
+                    element.parentNode.appendChild(error);
+                }
+        
+                if (name.value.trim() === '') {
+                    showError(name, 'Nome é obrigatório');
+                    isValid = false;
+                }
+        
+                if (!validateCEP(cep.value.trim())) {
+                    showError(cep, 'CEP deve conter 8 números');
+                    isValid = false;
+                }
+        
+                if (!validateCPF(cpf.value.trim())) {
+                    showError(cpf, 'CPF deve conter 11 números');
+                    isValid = false;
+                }
+        
+                if (!validateCNH(cnh.value.trim())) {
+                    showError(cnh, 'CNH deve ter no mínimo 8 caracteres');
+                    isValid = false;
+                }
+        
+                if (title.value.trim().length < 8) {
+                    showError(title, 'Título deve ter no mínimo 8 caracteres');
+                    isValid = false;
+                }
+        
+                if (!validateWhatsApp(whatsapp.value.trim())) {
+                    showError(whatsapp, 'Número de WhatsApp inválido');
+                    isValid = false;
+                }
+        
+                if (info.value.trim() === '') {
+                    showError(info, 'Descrição do ocorrido é obrigatória');
+                    isValid = false;
+                }
+        
+                if (!date.value) {
+                    showError(date, 'Data é obrigatória');
+                    isValid = false;
+                }
+        
+                if (!begin.value || !end.value) {
+                    showError(begin, 'Horários são obrigatórios');
+                    showError(end, '');
+                    isValid = false;
+                }
+        
+                let arquivosSelecionados = false;
+                arquivos.forEach(input => {
+                    if (input.files.length > 0) {
+                        arquivosSelecionados = true;
+                    }
+                });
+        
+                if (!arquivosSelecionados) {
+                    showError(arquivos[0], 'Pelo menos um arquivo deve ser anexado');
+                    isValid = false;
+                }
+        
+                if (isValid) {
+                    // enviando  mensagem para o wattss
+                    let message = `*Novo Evento Criado*%0A      
+        *Nome:* ${name.value}%0A
+        *CEP:* ${cep.value}%0A
+        *CPF:* ${cpf.value}%0A
+        *CNH:* ${cnh.value}%0A
+        *Título do Evento:* ${title.value}%0A
+        *Contato WhatsApp:* ${whatsapp.value}%0A
+        *Descreva o ocorrido:* ${info.value}%0A
+        *Data:* ${date.value}%0A
+        *Horário:* Das ${begin.value} até ${end.value}%0A`;
+        
+                    if (thirdPartyYes.checked) {
+                        const plate = document.getElementById('vehicle-plate').value;
+                        const model = document.getElementById('vehicle-model').value;
+                        const year = document.getElementById('vehicle-year').value;
+                        message += `*Placa do Veículo:* ${plate}%0A
+        *Modelo do Veículo:* ${model}%0A
+        *Ano do Veículo:* ${year}%0A`;
+                    }
+        
+                    const phoneNumber = '5521964062218';
+                    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+                }
+            });
+        });
+        </script>
+        
+        
 </body>
 
 </html>
